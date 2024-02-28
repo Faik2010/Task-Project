@@ -416,6 +416,12 @@ export const newMenu: MenuItem[] = [
   isMegaMenu:false,
 },
 {
+  label: "Heatmap",
+  link:"/users",
+  icon:"../../../../assets/images/Icons/heatmap.png",
+  isMegaMenu:false,
+},
+{
   label: "Günlük Endeks Farkı",
   link:"/users",
   icon:"../../../../assets/images/Icons/difference-endeks.png",
@@ -425,6 +431,12 @@ export const newMenu: MenuItem[] = [
   label: "Sayfalar",
   link:"/users",
   icon:"../../../../assets/images/Icons/sheet.png",
+  isMegaMenu:false,
+},
+{
+  label: "Enerji Akış Diyagramı",
+  link:"/users",
+  icon:"../../../../assets/images/Icons/flow-1.png",
   isMegaMenu:false,
 },
 {
