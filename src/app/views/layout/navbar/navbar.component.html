@@ -1,0 +1,127 @@
+<div class="horizontal-menu" id="asdf">
+  <nav *ngIf="!isMobile" class="navbar top-navbar">
+    <div class="container">
+      <div class="navbar-content">
+
+        
+        <a routerLink="/" class="navbar-brand nobleui-logo logo-light">
+         
+          <img ngbTooltip="Dashboard" tooltipClass="my-custom-class" class="img-md" src="../../../../assets/images/Icons/logo.png" alt="">
+        </a>
+        <div style="border-left: 4px solid white; margin-top: 6px;
+        height: 50px;"></div>
+          <ul class="navbar-nav">
+            
+              <li ngbTooltip="Dakikalık Üretim Grafiği" tooltipClass="my-custom-class" class="nav-item">
+                <a routerLink="/users"><img class="img-sm" src="../../../../assets/images/Icons/minutely-graphic.png" alt=""> </a> 
+              </li>
+             <li ngbTooltip="Saatlik Üretim Grafiği" tooltipClass="my-custom-class" class="nav-item">
+              <a routerLink="/users"> <img class="img-sm" src="../../../../assets/images/Icons/hourly-graphic.png" alt=""> </a> 
+            </li>
+             <li ngbTooltip="Günlük Üretim Grafiği" tooltipClass="my-custom-class" class="nav-item">
+              <a routerLink="/users"> <img class="img-sm" src="../../../../assets/images/Icons/daily-graphic.png" alt=""> </a> 
+            </li>
+             <li ngbTooltip="Performans Grafiği" tooltipClass="my-custom-class" class="nav-item">
+              <a routerLink="/users"> <img class="img-sm" src="../../../../assets/images/Icons/performance-chart.png" alt=""> </a>
+             </li>
+             <li ngbTooltip="Heatmap" tooltipClass="my-custom-class" class="nav-item">
+              <a routerLink="/users"> <img class="img-sm" src="../../../../assets/images/Icons/heatmap.png" alt=""> </a> 
+            </li>
+             <li ngbTooltip="Sayfalar" tooltipClass="my-custom-class" class="nav-item">
+              <a routerLink="/users"> <img class="img-sm" src="../../../../assets/images/Icons/sheet.png" alt=""> </a>
+             </li>
+             <li ngbTooltip="Enerji Akış Diyagramı" tooltipClass="my-custom-class" class="nav-item">
+              <a routerLink="/users"> <img class="img-sm" src="../../../../assets/images/Icons/flow-1.png" alt=""> </a>
+             </li>
+             <li ngbTooltip="Enerji Akış Diyagramı" tooltipClass="my-custom-class" class="nav-item">
+              <a routerLink="/users"> <img class="img-sm" src="../../../../assets/images/Icons/flow-2.png" alt=""> </a>
+             </li>
+             <li ngbTooltip="Excel İndir" tooltipClass="my-custom-class" class="nav-item">
+              <a routerLink="/users"> <img class="img-sm" src="../../../../assets/images/Icons/export.png" alt=""> </a> 
+            </li>
+             <li ngbTooltip="Veritabanı" tooltipClass="my-custom-class" class="nav-item">
+              <a routerLink="/users"> <img class="img-sm" src="../../../../assets/images/Icons/database.png" alt=""> </a>
+             </li>
+             <li ngbTooltip="Kullanıcı Ekle" tooltipClass="my-custom-class" class="nav-item">
+              <a routerLink="/users"> <img class="img-sm" src="../../../../assets/images/Icons/user-add.png" alt=""> </a> 
+            </li>
+              </ul>
+        
+       
+
+        <ul class="navbar-nav">
+         
+
+          <li class="nav-item nav-profile" ngbDropdown>
+            <a class="nav-link" ngbDropdownToggle id="profileDropdown" style="display: flex;">
+              <img class="wd-30 ht-30 rounded-circle" src="../../../../assets/images/Icons/user.png" alt="profile">
+              <p class="text-white" style="margin-left: 5px; margin-top: 5px;">{{userEmail}}</p>
+            </a>
+            <div ngbDropdownMenu class="px-0" aria-labelledby="profileDropdown">
+              <!-- <div class="d-flex flex-column align-items-center border-bottom px-5 py-3">
+                <div class="mb-3">
+                  <img class="wd-80 ht-80 rounded-circle" src="https://via.placeholder.com/80x80" alt="">
+                </div>
+                <div class="text-center">
+                  <p class="tx-16 fw-bolder">Amiah Burton</p>
+                  <p class="tx-12 text-muted">amiahburton@gmail.com</p>
+                </div>
+              </div> -->
+              <ul class="background-white list-unstyled p-1">
+               
+                <li class="dropdown-item py-2">
+                  <a href="" (click)="onLogout($event)" class="d-flex text-body ms-0">
+                    <i class="feather icon-log-out me-2 icon-md"></i>
+                    <span>Log Out</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" (click)="toggleHeaderMenu()">
+          <i data-feather="menu" class="text-body"></i>					
+        </button>
+
+      </div>
+    </div>
+  </nav>
+
+
+  <nav class="navbar top-navbar" *ngIf="isMobile">
+    <div class="container">
+      <div class="navbar-content">
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" (click)="toggleHeaderMenu()">
+         
+          <img class="text-white img-sm" src="../../../../assets/images/Icons/menu.png" alt="">
+        </button>
+        </div>
+        </div>
+        </nav>
+
+  <nav class="bottom-navbar" *ngIf="isMobile">
+		<div class="container">
+
+      
+			<ul class="nav page-navigation">
+        <ng-container *ngFor="let item of newMenu">
+
+          <li class="nav-item" [routerLinkActive]="['active']" *ngIf="!item.isMegaMenu">
+            <a class="nav-link" [routerLink]="item.link" *ngIf="!hasItems(item)">
+            
+              <img class="img-sm" [src]="item.icon" alt="">
+              <span class="menu-title">{{ item.label }}</span>
+            </a>
+            
+          </li>
+
+        
+        </ng-container>
+
+			
+			</ul>
+		</div>
+	</nav>
+
+</div>
